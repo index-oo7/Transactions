@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions App</title>
+    <!-- CONNECTING BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- CONNECTING BOOTSTRAP JS -->
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+
+     
+    <div class="container text-center" id="container">
+        <div class="row">
+            <div class="col">
+                <h3>Transaction data</h3>
+                <hr>
+                <input type="text" name="ime" id="ime" placeholder="Ime"><br><br>
+                <input type="text" name="pozivni" id="pozivni" placeholder="Pozivni broj"><br><br>
+                <input type="text" name="odliv" id="odliv" placeholder="Odliv"><br><br>
+                <input type="text" name="priliv" id="priliv" placeholder="Priliv"><br><br>
+                <input type="date" name="datum" id="datum"><br><br>
+                <button id="btnUnos" onclick="DodajTransakciju()">Snimi promene</button><br><br>
+            </div>
+            <!-- PRIKAZ STANJA -->
+            <div class="col">
+                <h3>Account Balance</h3>
+                <hr>
+                <div id="displayBalance"></div><br><br>
+            </div>
+            <!-- PRIKAZ NEDAVNIH TRANSAKCIJA -->
+            <div class="col">
+                <h3>Recent Transactions</h3> 
+                <hr>
+                <div id="displayRecent"></div><br><br>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- PRIKAZ SVIH TRANSAKCIJA -->
+    <h3>Prikaz transakcija</h3> 
+        <!-- SORTIRANJE -->
+    <select name="sortiranje" id="sortiranje">
+        <option value="0">--Izaberi opciju za sortiranje--</option>
+        <option value="rastuce">Po datumu rastuce</option>
+        <option value="opadajuce">Po datumu opadajuce</option>
+    </select>
+    <button id="btnSortiranje" onclick="Sortiraj()">Sortiranje</button> <br><br>
+        <!-- PRETRAGA -->
+    <input type="text" name="pretraga" id="pretraga" placeholder="pretraga"><button id="btnPretraga" onclick="Pretrazi()">Pretrazi</button>
+    <hr>
+    <div id="displayRecent"></div><br><br>
+    <hr>
+    <div id="displayTransactions"></div><br><br>
+
+    <!-- POCETAK JAVASCRIPT-A -->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

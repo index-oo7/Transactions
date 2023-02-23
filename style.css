@@ -1,0 +1,30 @@
+:root{
+    --primary-color: beige;
+    --highlights: #1b0d5c;
+    --text: #34448d;
+    --key: #ed6631;
+    --button: #eac294;
+    --defPadding: 20px;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--text);
+    padding: var(--defPadding);
+}
+h3{
+    color: var(--highlights);
+}
+button{
+    background-color: var(--button);
+}
+
+#displayRecent{
+    max-height: 250px;
+    overflow: auto;
+    text-align: left;
+}
+#container{
+    text-align: left;
+}
+
