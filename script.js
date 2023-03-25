@@ -59,10 +59,16 @@ function DodajTransakciju(){
     // DODAVANJE INSTANCE I U NIZOVE ODLIV/PRILIV I ISPIS DETALJA TRANSAKCIJE
     if(ime == ""){
         // EROR - NIJE UNETO IME
-        alert("Niste uneli ime");
+        alert("Niste uneli ime!");
+    }else if(JustLetters(ime)==false){
+        // EROR - UNETI BROJ ILI SPECIJALNI KARAKTER U IME
+        alert("Ime moze sadrzati samo slova!");
     }else if(pozivni == ""){
         // EROR - NIJE UNESEN POZIVNI BROJ
-        alert("Niste uneli pozivni broj");
+        alert("Niste uneli pozivni broj!");
+    }else if(JustNumbers(pozivni)==false){
+        // EROR - UNETO SLOVO ILI SPECIJALNI KARAKTER U POZIVNI BROJ
+        alert("Pozivni broj moze sadrzati samo brojeve!");
     }else if(priliv == "" && odliv == ""){
         // EROR - NIJE UNESEN PRILIV/ODLIV
         alert("Niste uneli ni priliv ni odliv!");
@@ -72,6 +78,9 @@ function DodajTransakciju(){
     }else if(priliv == "0" || odliv == "0"){
         // EROR - TRANSAKCIJA NE MOZE BITI 0
         alert("Transakcija ne moze biti 0!");
+    }else if(priliv != "" && JustNumbers(priliv)==false || odliv != "" && JustNumbers(odliv)==false){
+        // EROR - UNETO SLOVO ILI SPECIJALNI KARAKTER U PRILIV/ODLIV
+        alert("Priliv i odliv mogu sadrzati samo brojeve!");
     }else if(datum == ""){
         // EROR - NIJE UNESEN DATUM
         alert("Niste uneli datum!");
