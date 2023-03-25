@@ -177,3 +177,11 @@ function Pretrazi(){
         }
     }
 }
+
+function JustLetters(_string){
+    return /^[a-zA-Z\s]+$/.test(_string);
+}
+
+function JustNumbers(_number){
+    return /^\d+$/.test(_number);
+}
